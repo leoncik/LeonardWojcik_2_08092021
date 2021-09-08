@@ -1,0 +1,111 @@
+/* Table of content :
+
+1. Global styles
+2. Typography
+3. Layouts
+    3.1 MAIN PAGE
+    3.2 HEADER
+    3.3 FORMULAIRE DE RECHERCHE
+    3.4 HÉBERGEMENTS
+    3.5 ACTIVITÉS
+    3.6 PIED DE PAGE
+4. Components */
+
+
+/* ==================
+    1. GLOBAL STYLES
+   ================== */
+
+
+/* ==================
+    2. TYPOGRAPHY
+   ================== */
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* ==================
+    3. LAYOUTS
+   ================== */
+
+/* 3.1 MAIN PAGE */
+
+body
+{
+    margin: 0;
+}
+
+header
+{
+    padding: 50px 40px 50px 40px;
+}
+
+.search-form, .hebergements, .activites
+{
+    padding: 0 40px;
+}
+
+/* 3.2 HEADER */
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav-list
+{
+    display: flex;
+    gap: 70px;
+}
+
+.header__nav-list-item
+{
+    list-style: none;
+}
+
+/* 3.3 FORMULAIRE DE RECHERCHE */
+
+/* 3.4 HÉBERGEMENTS */
+
+.hebergements
+{
+    display: flex;
+    gap: 25px;
+}
+
+.hebergements__main-list
+{
+    flex-basis: 70%;
+    background-color: #f2f2f2;
+}
+
+.hebergements__trending
+{
+    flex-basis: 30%;
+    background-color: #f2f2f2;
+}
+
+.hebergements__img
+{
+    width: 300px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* 3.5 ACTIVITÉS */
+
+/* 3.6 PIED DE PAGE */
+
+.footer
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+}
+
+/* ==================
+    4. COMPONENTS
+   ================== */
