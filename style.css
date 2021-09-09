@@ -42,7 +42,8 @@ header
     padding: 50px 40px 50px 40px;
 }
 
-.search-form, .hebergements, .activites
+.search-form,
+main
 {
     padding: 0 40px;
 }
@@ -67,6 +68,41 @@ header
 }
 
 /* 3.3 FORMULAIRE DE RECHERCHE */
+
+form
+{
+    display: flex;
+    height: 40px;
+    width: fit-content;
+    border-radius: 25px;
+    border: 1px #f2f2f2 solid;
+}
+
+form > *
+{
+    border-style: none;
+}
+
+.search-form__icon
+{
+    background-color: #f2f2f2;
+    border-radius: 10px 0 0 10px;
+    width: 30px;
+}
+
+.search-form__input
+{
+    width: 200px;
+}
+
+
+.search-form__button
+{
+    width: 100px;
+    background-color: #0065fc;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
 
 /* 3.4 HÉBERGEMENTS */
 
@@ -109,3 +145,10 @@ header
 /* ==================
     4. COMPONENTS
    ================== */
+
+/* Boutons */
+
+button
+{
+    cursor: pointer;
+}

@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Reservia</title>
     </head>
 
@@ -34,10 +35,14 @@
                 <p>En plein centre ville ou en pleine nature</p>
             </div>
             <div class="search-form__content">
-                <input type="text" class="seatch-form__input">
-                <button type="button" class="search-form__button">Search-icon</button>
+                <form action="page.php">
+                    <button type="button" onclick="alert('Affichage carte')" class="search-form__icon"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+                    <input type="text" placeholder="Choisissez une destination" class="search-form__input">
+                    <button type="submit" class="search-form__button">Rechercher</button>
+                </form>
             </div>
             <div class="search-form__filters">
+                <!-- Utiliser JavaScript pour rendre les filtres opérationnels -->
                 <p>Filtres</p>
                 <button type="button">Économique</button>
                 <button type="button">Familial</button>
