@@ -161,17 +161,11 @@ form > *
 .activites__gallery
 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* grid-auto-flow: column; Permet de placer les éléments par colonne et non par ligne. Malheureusement, cela empêche la création automatique de lignes lorsque la fenêtre se réduit. Pour obtenir l'affichage souhaité sans modifier le HTML il semble préférable d'utiliser ":nth-child()" */
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: column;
+    gap: 10px;
 
-    background-color: red;
-}
-
-.activites__img
-{
-    width: 200px;
-    height: 100px;
-    object-fit: cover;
+    border: 5px black solid;
 }
 
 /* 3.6 PIED DE PAGE */
@@ -228,8 +222,32 @@ figure
 
 /* Activites cards */
 
+.activites__card
+{
+    border-radius: 25px;
+    background-color: tomato;
+}
+
+.activites__img
+{
+    border-radius: 25px 25px 0 0;
+    width: 250px;
+}
+
+.activites__card figcaption
+{
+    position: relative;
+    background-color: yellow;
+}
+
 .activites__card_vertical
 {
+    background-color: yellowgreen;
+    grid-row: auto / span 2;
+}
+.activites__card_vertical img
+{
+    width: 100px;
     background-color: yellowgreen;
     grid-row: auto / span 2;
 }
