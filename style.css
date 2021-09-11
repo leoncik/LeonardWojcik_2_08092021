@@ -161,11 +161,10 @@ form > *
 .activites__gallery
 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(50px, 270px));
+    grid-template-rows: 200px 20px 30px 160px;
     grid-auto-flow: column;
-    gap: 10px;
-
-    border: 5px black solid;
+    column-gap: 35px;
 }
 
 /* 3.6 PIED DE PAGE */
@@ -225,13 +224,21 @@ figure
 .activites__card
 {
     border-radius: 25px;
+    justify-self: stretch;
+    align-self: stretch;
     background-color: tomato;
 }
 
 .activites__img
 {
     border-radius: 25px 25px 0 0;
-    width: 250px;
+    object-fit: cover;
+    width: 100%;
+    height: 100px;
+}
+.activites__card_vertical img
+{
+    height: 250px;
 }
 
 .activites__card figcaption
@@ -240,14 +247,27 @@ figure
     background-color: yellow;
 }
 
+/* Position of the cards on the grid */
+
 .activites__card_vertical
 {
     background-color: yellowgreen;
-    grid-row: auto / span 2;
+    grid-row: span 4;
 }
-.activites__card_vertical img
+
+.activites__card_horizontal1
 {
-    width: 100px;
-    background-color: yellowgreen;
-    grid-row: auto / span 2;
+    grid-row: span 2;
+}
+
+.activites__card_horizontal2
+{
+    grid-row-start: 4;
+}
+
+.activites__card_horizontal4
+{
+    grid-row-start: 3;
+    grid-row-end: span 2; /* Pourquoi "grid-row: span 2;" ne marche pas ? */
+    background-color: darkcyan;
 }
