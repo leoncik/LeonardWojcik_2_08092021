@@ -49,6 +49,8 @@ header
 
 /* 3.2 HEADER */
 
+/* FAIRE TRÈS ATTENTION À LA LIGNE BLEUE TOUT EN HAUT QUAND ON SÉLECTIONNE UNE CATÉGORIE ! */
+
 header
 {
     display: flex;
@@ -156,6 +158,22 @@ form > *
 
 /* 3.5 ACTIVITÉS */
 
+.activites__gallery
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-auto-flow: column; Permet de placer les éléments par colonne et non par ligne. Malheureusement, cela empêche la création automatique de lignes lorsque la fenêtre se réduit. Pour obtenir l'affichage souhaité sans modifier le HTML il semble préférable d'utiliser ":nth-child()" */
+
+    background-color: red;
+}
+
+.activites__img
+{
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
+
 /* 3.6 PIED DE PAGE */
 
 .footer
@@ -176,7 +194,9 @@ button
     cursor: pointer;
 }
 
-/* Cards */
+/* CARDS */
+
+/* Hebergement cards */
 
 .hebergements__card, .hebergements__card_trending
 {
@@ -204,4 +224,12 @@ figure
     width: 100px;
     height: 150px;
     border-radius: 25px 0 0 25px;
+}
+
+/* Activites cards */
+
+.activites__card_vertical
+{
+    background-color: yellowgreen;
+    grid-row: auto / span 2;
 }
