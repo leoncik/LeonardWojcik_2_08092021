@@ -9,7 +9,10 @@
     3.4 HÉBERGEMENTS
     3.5 ACTIVITÉS
     3.6 PIED DE PAGE
-4. Components */
+4. Components
+5. Device responsivity
+    5.1 Tablet
+    5.2 Mobile */
 
 
 /* ==================
@@ -286,3 +289,85 @@ figure
     grid-row-start: 3;
     grid-row-end: span 2; /* Pourquoi "grid-row: span 2;" ne marche pas ? */
 }
+
+/* ========================
+    5. DEVICE RESPONSIVITY
+   ======================== */
+
+/* 5.1 Tablet */
+
+@media all and (min-width: 480px) and (max-width: 801px)
+{
+    /* HÉBERGEMENTS */
+    .hebergements
+    {
+        flex-direction: column-reverse;
+    }
+    .hebergements__card_trending
+    {
+        width: 500px;
+    }
+    /* ACTIVITÉS */
+
+    /* Reset span of horizontal cards */
+    .activites__card_horizontal1,
+    .activites__card_horizontal2,
+    .activites__card_horizontal4,
+    .activites__card_horizontal4
+    {
+        grid-row: span 1;
+    }
+    /* Reajust span of vertical cards */
+    .activites__card_vertical
+    {
+        grid-row: span 2;
+    }
+
+    .activites__gallery
+    {
+        grid-auto-flow: initial;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: auto;
+    }
+    body 
+    {
+        background-color: blue;
+    }
+}
+
+/* 5.2 Mobile */
+
+@media all and (max-width: 480px)
+{
+    /* MAIN PAGE */
+    body 
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* HÉBERGEMENTS */
+    .hebergements
+    {
+        flex-direction: column-reverse;
+    }
+    .hebergements__main-list
+    {
+        background-color: white;
+    }
+
+    /* ACTIVITÉS */
+    .activites__gallery
+    {
+    display: flex;
+    flex-direction: column;
+    }
+
+    /* FOOTER */
+    .footer
+    {
+        flex-direction: column;
+    }
+}
+
+/* property: initial; permet de reset les propriétés précédentes... syper ! */
