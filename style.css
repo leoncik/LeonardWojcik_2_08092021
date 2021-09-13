@@ -171,6 +171,7 @@ form > *
 
 .footer
 {
+    margin-top: 25px;
     display: flex;
     justify-content: space-around;
     background-color: #f2f2f2;
@@ -226,32 +227,47 @@ figure
     border-radius: 25px;
     justify-self: stretch;
     align-self: stretch;
-    background-color: tomato;
 }
 
 .activites__img
 {
-    border-radius: 25px 25px 0 0;
+    border-radius: 25px 25px 25px 25px;
     object-fit: cover;
     width: 100%;
     height: 100px;
 }
-.activites__card_vertical img
+
+.activites__card figure /* J'ai passé du temps à vouloir modifier la hauteur de l'image alors que c'était la figure qui était en tort ! */
 {
-    height: 250px;
+    position: relative; /* Pour pouvoir positionner le texte en bas avec un position: basolute */
+    height: 100%;
+}
+
+.activites__img
+{
+    height: 95%;
 }
 
 .activites__card figcaption
 {
-    position: relative;
-    background-color: yellow;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: 0px;
+    border-radius: 0 0 25px 25px;
+    background-color: white;
+    box-shadow: 0 7px 5px rgb(153, 151, 151);
+}
+
+.activites__card figcaption h3
+{
+    padding-left: 15px;
 }
 
 /* Position of the cards on the grid */
 
 .activites__card_vertical
 {
-    background-color: yellowgreen;
     grid-row: span 4;
 }
 
@@ -269,5 +285,4 @@ figure
 {
     grid-row-start: 3;
     grid-row-end: span 2; /* Pourquoi "grid-row: span 2;" ne marche pas ? */
-    background-color: darkcyan;
 }
