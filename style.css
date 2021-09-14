@@ -5,6 +5,8 @@
 3. Layouts
     3.1 MAIN PAGE
     3.2 HEADER
+        3.2.1 Fixed version (default)
+        3.2.2 Standart version (comment the 3.2.1 Fixed version to apply this style)
     3.3 FORMULAIRE DE RECHERCHE
     3.4 HÉBERGEMENTS
     3.5 ACTIVITÉS
@@ -40,10 +42,7 @@ body
     margin: 0;
 }
 
-header
-{
-    padding: 50px 40px 50px 40px;
-}
+
 
 .search-form, main
 {
@@ -53,12 +52,6 @@ header
 /* 3.2 HEADER */
 
 /* FAIRE TRÈS ATTENTION À LA LIGNE BLEUE TOUT EN HAUT QUAND ON SÉLECTIONNE UNE CATÉGORIE ! */
-
-header
-{
-    display: flex;
-    justify-content: space-between;
-}
 
 .header__nav-list
 {
@@ -70,6 +63,46 @@ header
 {
     list-style: none;
 }
+
+
+.header__logo
+{
+    margin-left: 40px;
+}
+
+.header__navbar
+{
+    margin-right: 40px;
+}
+
+
+/* 3.2.1 Fixed version */
+
+.search-form
+{
+    padding-top: 100px;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 40px;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(231, 231, 231);
+}
+
+
+
+/* 3.2.2 Unfixed version (comment the 3.2.1 Fixed version to apply this style) 
+
+
+header
+{
+    padding: 50px 40px 50px 40px;
+} */
 
 /* 3.3 FORMULAIRE DE RECHERCHE */
 
