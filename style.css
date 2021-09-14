@@ -21,6 +21,12 @@
     1. GLOBAL STYLES
    ================== */
 
+/* Permet de faire un défilement fluide. Ne fonctionne pas avec tous les navigateurs. */
+html
+{
+    scroll-behavior: smooth;
+}
+
 
 /* ==================
     2. TYPOGRAPHY
@@ -94,6 +100,12 @@ header
     background-color: rgb(231, 231, 231);
 }
 
+/* Évite au header d'empiéter sur le contenu ciblé par la navigation */
+#hebergements,
+#activites
+{
+    scroll-margin-top: 100px;
+}
 
 
 /* 3.2.2 Unfixed version (comment the 3.2.1 Fixed version to apply this style) 
