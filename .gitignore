@@ -1,6 +1,14 @@
+# Ignore system files
+
 .directory
+
+# Ignore mockup files
+
 Desktop - 1.png
 iPhone 8 - 1.png
+
+# Ignore personal data
+
 changelog
 Reservia Layout activites tablette.pdf
 Reservia layout tablette option2.pdf
