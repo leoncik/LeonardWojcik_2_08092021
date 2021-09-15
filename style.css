@@ -13,8 +13,9 @@
     3.6 PIED DE PAGE
 4. Components
 5. Device responsivity
-    5.1 Tablet
-    5.2 Mobile */
+    5.1 Destktop smaller window
+    5.2 Tablet
+    5.3 Mobile */
 
 
 /* ==================
@@ -76,9 +77,16 @@ body
     margin-left: 40px;
 }
 
-.header__navbar
+.header__subscribe
 {
     margin-right: 40px;
+    margin-left: 70px;
+}
+
+/* Astuce trouvée ici : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+.header__push
+{
+    margin-left: auto;
 }
 
 
@@ -92,7 +100,7 @@ body
 header
 {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     padding-top: 40px;
     position: fixed;
@@ -339,7 +347,18 @@ figure
     5. DEVICE RESPONSIVITY
    ======================== */
 
-/* 5.1 Tablet */
+/* 5.1 Destktop smaller window */
+
+@media all and (max-width: 700px)
+{
+    .header__navbar
+    {
+        order: 1;
+    }
+
+}
+
+/* 5.2 Tablet */
 
 @media all and (min-width: 480px) and (max-width: 801px)
 {
@@ -380,7 +399,7 @@ figure
     }
 }
 
-/* 5.2 Mobile */
+/* 5.3 Mobile */
 
 @media all and (max-width: 480px)
 {
@@ -390,6 +409,8 @@ figure
         margin-left: auto;
         margin-right: auto;
     }
+
+    /* HEADER */
 
     /* HÉBERGEMENTS */
     .hebergements
@@ -415,4 +436,5 @@ figure
     }
 }
 
-/* property: initial; permet de reset les propriétés précédentes... syper ! */
+/* property: initial; permet de reset les propriétés précédentes... super ! */
+/* ajouter un breakpoint à 595px pour le header */
