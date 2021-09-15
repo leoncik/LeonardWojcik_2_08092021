@@ -28,6 +28,11 @@ html
     scroll-behavior: smooth;
 }
 
+a
+{
+    text-decoration: none;
+}
+
 
 /* ==================
     2. TYPOGRAPHY
@@ -37,6 +42,12 @@ body
 {
     font-family: 'Raleway', sans-serif;
 }
+
+a
+{
+    color: black;
+}
+
 
 /* ==================
     3. LAYOUTS
@@ -100,12 +111,11 @@ body
 header
 {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     padding-top: 40px;
     position: fixed;
     z-index: 1;
-    background-color: rgb(231, 231, 231);
+    background-color: white;
 }
 
 /* Évite au header d'empiéter sur le contenu ciblé par la navigation */
@@ -242,6 +252,25 @@ form > *
 button
 {
     cursor: pointer;
+}
+
+/* HEADER NAVBAR EFFECT */
+
+.header__nav-list-item_hover::before
+{
+    content: "";
+    display: block; /* Permet d'attribuer une largeur */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 5px;
+    background-color: #0065fc;
+    transform: scale(0);
+    transition: 0.2s ease-in-out;
+}
+.header__nav-list-item_hover:hover::before
+{
+    transform: scale(1);
 }
 
 /* CARDS */
@@ -411,6 +440,21 @@ figure
     }
 
     /* HEADER */
+    header 
+    {
+        flex-wrap: wrap;
+    }
+
+    .header__navbar
+    {
+        width: 100%;
+        border-bottom: #f2f2f2 5px solid;
+    }
+    .header__nav-list
+    {
+        justify-content: space-around;
+    }
+
 
     /* HÉBERGEMENTS */
     .hebergements
