@@ -275,6 +275,18 @@ button
 
 /* CARDS */
 
+/* Stars style */
+
+.checked-star
+{
+    color: #0065fc;
+}
+.unchecked-star
+{
+    color: #d9d9d9;
+}
+
+
 /* Hebergement cards */
 
 .hebergements__card, .hebergements__card_trending
