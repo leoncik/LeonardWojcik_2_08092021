@@ -373,11 +373,16 @@ figure
 }
 
 /* TOGGLE SWITCHES */
+/* Plusieurs propriétés se répètent, penser à les regrouper ! */
+
+/* Global propreties */
 
 .switch input
 {
     display: none; /* Cache la checkbox d'origine */
 }
+
+/* ECONOMIC SWITCH */
 
 .switch-economic
 {
@@ -387,7 +392,7 @@ figure
     height: 45px;
 }
 
-.switch-bar
+.switch-bar-economic
 {
     position: absolute;
     inset: 0; /* Raccourci de top: 0 righ:0 bottom:0 left:0. Pas reconnu par tous les navigateurs */
@@ -398,7 +403,7 @@ figure
     border-radius: 25px;
 }
 
-.switch-bar::before /* Style du bouton */
+.switch-bar-economic::before /* Style du bouton */
 {
     position: absolute;
     content: ""; /* Possibilité de mettre directement l'icône dans content (avec content: "\f107"; par exemple et régler la taille et position avec font-size etc). */
@@ -414,7 +419,7 @@ figure
     transition: 0.5s;
 }
 
-.switch-bar::after /* Style du texte */
+.switch-bar-economic::after /* Style du texte */
 {
     position: absolute;
     content: "Économique";
@@ -425,19 +430,217 @@ figure
 }
 
 /* Animation de la barre lorsque la barre est cliquée (checked) */
-input:checked + .switch-bar
+input:checked + .switch-bar-economic
 {
     background: #0065fc;
 }
 
 /* Animation du bouton */
-input:checked + .switch-bar::before
+input:checked + .switch-bar-economic::before
 {
     transform: translateX(140px);
 }
 
 /* Animation du texte */
-input:checked + .switch-bar::after
+input:checked + .switch-bar-economic::after
+{
+    transform: translateX(-30px);
+    color: white;
+}
+
+/* FAMILIAL SWITCH */
+
+.switch-familial
+{
+    position: relative;
+    display: block; 
+    width: 145px;
+    height: 45px;
+}
+
+.switch-bar-familial
+{
+    position: absolute;
+    inset: 0; 
+    transition: 0.5s; 
+    cursor: pointer;
+    background: white;
+    border: 2px solid gray;
+    border-radius: 25px;
+}
+
+.switch-bar-familial::before /* Style du bouton */
+{
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 45px;
+    bottom: -2px;
+    left: -2px;
+    border-radius: 50%;
+    background: url("images/fa-icons/child-solid.svg"), #deebff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition: 0.5s;
+}
+
+.switch-bar-familial::after /* Style du texte */
+{
+    position: absolute;
+    content: "Familial";
+    top: 12px;
+    left: 55px;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+/* Animation de la barre lorsque la barre est cliquée (checked) */
+input:checked + .switch-bar-familial
+{
+    background: #0065fc;
+}
+
+/* Animation du bouton */
+input:checked + .switch-bar-familial::before
+{
+    transform: translateX(105px);
+}
+
+/* Animation du texte */
+input:checked + .switch-bar-familial::after
+{
+    transform: translateX(-30px);
+    color: white;
+}
+
+/* ROMANTIC SWITCH */
+
+.switch-romantic
+{
+    position: relative;
+    display: block; 
+    width: 180px;
+    height: 45px;
+}
+
+.switch-bar-romantic
+{
+    position: absolute;
+    inset: 0; 
+    transition: 0.5s; 
+    cursor: pointer;
+    background: white;
+    border: 2px solid gray;
+    border-radius: 25px;
+}
+
+.switch-bar-romantic::before /* Style du bouton */
+{
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 45px;
+    bottom: -2px;
+    left: -2px;
+    border-radius: 50%;
+    background: url("images/fa-icons/heart-solid.svg"), #deebff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition: 0.5s;
+}
+
+.switch-bar-romantic::after /* Style du texte */
+{
+    position: absolute;
+    content: "Romantique";
+    top: 12px;
+    left: 55px;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+/* Animation de la barre lorsque la barre est cliquée (checked) */
+input:checked + .switch-bar-romantic
+{
+    background: #0065fc;
+}
+
+/* Animation du bouton */
+input:checked + .switch-bar-romantic::before
+{
+    transform: translateX(140px);
+}
+
+/* Animation du texte */
+input:checked + .switch-bar-romantic::after
+{
+    transform: translateX(-30px);
+    color: white;
+}
+
+/* SWITCH ANIMALS */
+
+.switch-animals
+{
+    position: relative;
+    display: block; 
+    width: 225px;
+    height: 45px;
+}
+
+.switch-bar-animals
+{
+    position: absolute;
+    inset: 0; 
+    transition: 0.5s; 
+    cursor: pointer;
+    background: white;
+    border: 2px solid gray;
+    border-radius: 25px;
+}
+
+.switch-bar-animals::before /* Style du bouton */
+{
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 45px;
+    bottom: -2px;
+    left: -2px;
+    border-radius: 50%;
+    background: url("images/fa-icons/dog-solid.svg"), #deebff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition: 0.5s;
+}
+
+.switch-bar-animals::after /* Style du texte */
+{
+    position: absolute;
+    content: "Animaux autorisés";
+    top: 12px;
+    left: 55px;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+/* Animation de la barre lorsque la barre est cliquée (checked) */
+input:checked + .switch-bar-animals
+{
+    background: #0065fc;
+}
+
+/* Animation du bouton */
+input:checked + .switch-bar-animals::before
+{
+    transform: translateX(182px);
+}
+
+/* Animation du texte */
+input:checked + .switch-bar-animals::after
 {
     transform: translateX(-30px);
     color: white;
