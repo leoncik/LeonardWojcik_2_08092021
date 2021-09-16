@@ -247,7 +247,7 @@ form > *
     4. COMPONENTS
    ================== */
 
-/* Boutons */
+/* 4.1 Boutons */
 
 button
 {
@@ -370,6 +370,77 @@ figure
 {
     grid-row-start: 3;
     grid-row-end: span 2; /* Pourquoi "grid-row: span 2;" ne marche pas ? */
+}
+
+/* TOGGLE SWITCHES */
+
+.switch input
+{
+    display: none; /* Cache la checkbox d'origine */
+}
+
+.switch-economic
+{
+    position: relative; /* Permet de lier ensuite le "bouton" avec un position: absolute. */
+    display: block; /* Permet de modifier la taille du conteneur */
+    width: 180px;
+    height: 45px;
+}
+
+.switch-bar
+{
+    position: absolute;
+    inset: 0; /* Raccourci de top: 0 righ:0 bottom:0 left:0. Pas reconnu par tous les navigateurs */
+    transition: 0.5s; /* Temps d'animation */
+    cursor: pointer;
+    background: white;
+    border: 2px solid gray;
+    border-radius: 25px;
+}
+
+.switch-bar::before /* Style du bouton */
+{
+    position: absolute;
+    content: ""; /* Possibilité de mettre directement l'icône dans content (avec content: "\f107"; par exemple et régler la taille et position avec font-size etc). */
+    width: 45px;
+    height: 45px;
+    bottom: -2px;
+    left: -2px;
+    border-radius: 50%;
+    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), #deebff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition: 0.5s;
+}
+
+.switch-bar::after /* Style du texte */
+{
+    position: absolute;
+    content: "Économique";
+    top: 12px;
+    left: 55px;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+/* Animation de la barre lorsque la barre est cliquée (checked) */
+input:checked + .switch-bar
+{
+    background: #0065fc;
+}
+
+/* Animation du bouton */
+input:checked + .switch-bar::before
+{
+    transform: translateX(140px);
+}
+
+/* Animation du texte */
+input:checked + .switch-bar::after
+{
+    transform: translateX(-30px);
+    color: white;
 }
 
 /* ========================

@@ -5,9 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="style.css">
+        <!-- Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
+        <!-- Font awesome icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -55,12 +57,28 @@
                 </form>
             </div>
             <div class="search-form__filters">
-                <!-- Utiliser JavaScript pour rendre les filtres opérationnels -->
                 <p>Filtres</p>
-                <button type="button">Économique</button>
-                <button type="button">Familial</button>
-                <button type="button">Romantique</button>
-                <button type="button">Animaux autorisés</button>
+                <div class="search-form__filter-economic">
+                    <label class="switch switch-economic">
+                        <input type="checkbox">
+                        <span class="switch-bar"></span>
+                    </label>
+                </div>
+                
+
+                <!--
+                <label class="switch switch-familial">
+                    <input type="checkbox">
+                    <span class="switch-bar"></span>
+                </label>
+                <label class="switch switch-romantic">
+                    <input type="checkbox">
+                    <span class="switch-bar"></span>
+                </label>
+                <label class="switch switch-animals">
+                    <input type="checkbox">
+                    <span class="switch-bar"></span>
+                </label> -->
             </div>
             <div class="search__output">
                 <p><i class="fa fa-info-circle" aria-hidden="true"></i> Plus de 500 logements sont disponibles dans cette ville</p>
