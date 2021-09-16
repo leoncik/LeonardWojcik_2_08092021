@@ -142,9 +142,20 @@ form
 {
     display: flex;
     height: 40px;
-    width: fit-content;
-    border-radius: 25px;
+    width: 330px;
+    border-radius: 10px;
     border: 1px #f2f2f2 solid;
+}
+
+.search-form__input
+{
+    padding-left: 15px;
+}
+
+::placeholder
+{
+    font-weight: bold;
+    opacity: 1;
 }
 
 form > *
@@ -156,7 +167,8 @@ form > *
 {
     background-color: #f2f2f2;
     border-radius: 10px 0 0 10px;
-    width: 30px;
+    width: 45px;
+    font-size: 1.2em;
 }
 
 .search-form__input
@@ -180,6 +192,16 @@ form > *
     margin-top: 25px;
     display: flex;
     gap: 40px;
+}
+
+/* Output */
+
+.fa-info-circle
+{
+    font-size: 3.2em;
+    color: white;
+    background-color: #0065fc; /* Le fond dépasse l'icône. À corriger */
+    border-radius: 50%;
 }
 
 /* 3.4 HÉBERGEMENTS */
@@ -429,7 +451,7 @@ figure
     transition: 0.5s; /* Temps d'animation */
     cursor: pointer;
     background: white;
-    border: 2px solid gray;
+    border: 2px solid #dbdbdb; /* Couleur trouvée à la pipette */
     border-radius: 25px;
 }
 
@@ -495,7 +517,7 @@ input:checked + .switch-bar-economic::after
     transition: 0.5s; 
     cursor: pointer;
     background: white;
-    border: 2px solid gray;
+    border: 2px solid #dbdbdb;
     border-radius: 25px;
 }
 
@@ -561,7 +583,7 @@ input:checked + .switch-bar-familial::after
     transition: 0.5s; 
     cursor: pointer;
     background: white;
-    border: 2px solid gray;
+    border: 2px solid #dbdbdb;
     border-radius: 25px;
 }
 
@@ -627,7 +649,7 @@ input:checked + .switch-bar-romantic::after
     transition: 0.5s; 
     cursor: pointer;
     background: white;
-    border: 2px solid gray;
+    border: 2px solid #dbdbdb;
     border-radius: 25px;
 }
 
