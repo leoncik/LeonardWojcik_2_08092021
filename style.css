@@ -12,6 +12,10 @@
     3.5 ACTIVITÉS
     3.6 PIED DE PAGE
 4. Components
+    4.1 BOUTONS
+    4.2 HEADER NAVBAR EFFECT
+    4.3 CARDS
+    4.4 TOGGLE SWITCHES
 5. Device responsivity
     5.1 Destktop smaller window
     5.2 Tablet
@@ -94,7 +98,7 @@ body
     margin-left: 70px;
 }
 
-/* Astuce trouvée ici : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+/* Place un espace entre le logo et les liens de navigation */
 .header__push
 {
     margin-left: auto;
@@ -277,14 +281,14 @@ form > *
     4. COMPONENTS
    ================== */
 
-/* 4.1 Boutons */
+/* 4.1 BOUTONS */
 
 button
 {
     cursor: pointer;
 }
 
-/* HEADER NAVBAR EFFECT */
+/* 4.2 HEADER NAVBAR EFFECT */
 
 .header__nav-list-item_hover::before
 {
@@ -303,7 +307,7 @@ button
     transform: scale(1);
 }
 
-/* CARDS */
+/* 4.3 CARDS */
 
 /* Stars style */
 
@@ -422,12 +426,11 @@ figure
 .activites__card_horizontal4
 {
     grid-row-start: 3;
-    grid-row-end: span 2; /* Pourquoi "grid-row: span 2;" ne marche pas ? */
+    grid-row-end: span 2;
 }
 
-/* TOGGLE SWITCHES */
+/* 4.4 TOGGLE SWITCHES */
 /* Plusieurs propriétés se répètent, penser à les regrouper ! */
-/* Explications détaillées du principe : https://css-tricks.com/the-checkbox-hack/ */
 
 /* Global propreties */
 
@@ -453,14 +456,14 @@ figure
     transition: 0.5s; /* Temps d'animation */
     cursor: pointer;
     background: white;
-    border: 2px solid #dbdbdb; /* Couleur trouvée à la pipette */
+    border: 2px solid #dbdbdb;
     border-radius: 25px;
 }
 
 .switch-bar-economic::before /* Style du bouton */
 {
     position: absolute;
-    content: ""; /* Possibilité de mettre directement l'icône dans content (avec content: "\f107"; par exemple et régler la taille et position avec font-size etc). */
+    content: "";
     width: 45px;
     height: 45px;
     bottom: -2px;
@@ -768,6 +771,11 @@ input:checked + .switch-bar-animals::after
         margin-right: auto;
     }
 
+    main 
+    {
+        padding: 0;
+    }
+
     /* HEADER */
     header 
     {
@@ -790,22 +798,44 @@ input:checked + .switch-bar-animals::after
     {
         flex-direction: column-reverse;
     }
+
+    .hebergements__trending
+    {
+        border-radius: 0;
+    }
+
+    .hebergements__card_trending, .hebergements__card_main-list
+    {
+        width: 350px;
+    }
     .hebergements__main-list
     {
         background-color: white;
     }
 
     /* ACTIVITÉS */
+    .activites
+    {
+        padding: 0 20px;
+    }
+
     .activites__gallery
     {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    }
+
+    .activites__img
+    {
+        height: 235px;
     }
 
     /* FOOTER */
     .footer
     {
         flex-direction: column;
+        padding-left: 25px;
     }
 }
 
