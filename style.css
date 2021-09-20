@@ -6,8 +6,6 @@
 4. Layouts
     4.1 MAIN PAGE
     4.2 HEADER
-        4.2.1 Fixed version (default)
-        4.2.2 Standart version (comment the 3.2.1 Fixed version to apply this style)
     4.3 FORMULAIRE DE RECHERCHE
     4.4 HÉBERGEMENTS
     4.5 ACTIVITÉS
@@ -151,9 +149,6 @@ body
     margin-left: auto;
 }
 
-
-/* 3.2.1 Fixed version */
-
 .search-form
 {
     padding-top: 100px;
@@ -175,15 +170,6 @@ header
 {
     scroll-margin-top: 100px;
 }
-
-
-/* 3.2.2 Unfixed version (comment the 3.2.1 Fixed version to apply this style) 
-
-
-header
-{
-    padding: 50px 40px 50px 40px;
-} */
 
 /* 3.3 FORMULAIRE DE RECHERCHE */
 
@@ -269,7 +255,7 @@ form > *
 {
     flex-basis: 70%;
     padding: 30px 20px 30px 20px;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: var(--backgroundColor);
 }
 
@@ -285,7 +271,7 @@ form > *
     position: relative; /* Pour fixer en absolute l'icône "fa-line-chart" */
     flex-basis: 30%;
     padding: 30px 20px 30px 20px;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: var(--backgroundColor);
 }
 
@@ -368,6 +354,12 @@ button
     color: #d9d9d9;
 }
 
+/* Cards */
+
+.hebergements__card, .activites__card
+{
+    box-shadow: 0 3px 8px rgba(206, 206, 206, 0.438);
+}
 
 /* Hebergement cards */
 
@@ -375,7 +367,7 @@ button
 {
     margin: 10px 0;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .hebergements__card_main-list
@@ -391,7 +383,12 @@ figure
 .hebergements__img
 {
     width: 100%;
-    border-radius: 25px 25px 0 0;
+    border-radius: 15px 15px 0 0;
+}
+
+.hebergements__card figcaption
+{
+    padding-left: 10px;
 }
 
 .hebergements__card_trending
@@ -402,26 +399,44 @@ figure
 .hebergements__card_trending figure
 {
     display: flex;
+    gap: 5px;
 }
+
 .hebergements__img_trending
 {
-    width: 100px;
-    height: 150px;
-    border-radius: 25px 0 0 25px;
+    width: 110px;
+    height: 130px;
+    border-radius: 15px 0 0 15px;
+}
+
+.hebergements__card_trending figcaption
+{
+    position: relative;
+}
+
+.hebergements__rating
+{
+    position: absolute;
+    bottom: 10px;
 }
 
 /* Activites cards */
 
 .activites__card
 {
-    border-radius: 25px;
+    border-radius: 15px;
     justify-self: stretch;
     align-self: stretch;
 }
 
+.activites__card figure
+{
+    margin: 0;
+}
+
 .activites__img
 {
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 15px 15px 15px 15px;
     object-fit: cover;
     width: 100%;
     height: 100px;
@@ -444,9 +459,8 @@ figure
     bottom: 0;
     width: 100%;
     padding-left: 0px;
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 15px 15px;
     background-color: white;
-    box-shadow: 0 7px 5px rgb(153, 151, 151);
 }
 
 .activites__card figcaption h3
@@ -801,10 +815,6 @@ input:checked + .switch-bar-animals::after
         grid-template-columns: repeat(2, minmax(200px, 1fr));
         grid-template-rows: repeat(4, 200px);
         gap: 25px;
-    }
-    body 
-    {
-        background-color: paleturquoise;
     }
 }
 
