@@ -88,6 +88,7 @@ a
 {
     --mainColor: #0065fc;
     --mainColorLight: #deebff;
+    --hoverButtonColor: #a2e5ee;
     --backgroundColor: #f2f2f2;
 }
 
@@ -235,12 +236,17 @@ form > *
 
 /* Output */
 
-.fa-info-circle
+.fa-info
 {
-    font-size: 3.2em;
-    color: white;
-    background-color: var(--mainColor); /* Le fond dépasse l'icône. À corriger */
+    display: inline-block;
     border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    padding: 5px 4px 4px 4px;
+    color: var(--mainColor);
+    text-align: center;
+    box-shadow: 0px 0px 2px #2b2b2b;
+    margin-right: 10px;
 }
 
 /* 3.4 HÉBERGEMENTS */
@@ -538,6 +544,14 @@ figure
     transition: 0.5s;
 }
 
+.switch-bar-economic:hover::before
+{
+    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), var(--hoverButtonColor);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
 .switch-bar-economic::after /* Style du texte */
 {
     position: absolute;
@@ -602,6 +616,14 @@ input:checked + .switch-bar-economic::after
     background-position: center;
     background-size: 20px 20px;
     transition: 0.5s;
+}
+
+.switch-bar-familial:hover::before
+{
+    background: url("images/fa-icons/child-solid.svg"), var(--hoverButtonColor);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
 }
 
 .switch-bar-familial::after /* Style du texte */
@@ -670,6 +692,14 @@ input:checked + .switch-bar-familial::after
     transition: 0.5s;
 }
 
+.switch-bar-romantic:hover::before 
+{
+    background: url("images/fa-icons/heart-solid.svg"), var(--hoverButtonColor);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
 .switch-bar-romantic::after /* Style du texte */
 {
     position: absolute;
@@ -734,6 +764,14 @@ input:checked + .switch-bar-romantic::after
     background-position: center;
     background-size: 20px 20px;
     transition: 0.5s;
+}
+
+.switch-bar-animals:hover::before 
+{
+    background: url("images/fa-icons/dog-solid.svg"), var(--hoverButtonColor);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
 }
 
 .switch-bar-animals::after /* Style du texte */
