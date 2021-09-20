@@ -2,24 +2,25 @@
 
 1. Global styles
 2. Typography
-3. Layouts
-    3.1 MAIN PAGE
-    3.2 HEADER
-        3.2.1 Fixed version (default)
-        3.2.2 Standart version (comment the 3.2.1 Fixed version to apply this style)
-    3.3 FORMULAIRE DE RECHERCHE
-    3.4 HÉBERGEMENTS
-    3.5 ACTIVITÉS
-    3.6 PIED DE PAGE
-4. Components
-    4.1 BOUTONS
-    4.2 HEADER NAVBAR EFFECT
-    4.3 CARDS
-    4.4 TOGGLE SWITCHES
-5. Device responsivity
-    5.1 Destktop smaller window
-    5.2 Tablet
-    5.3 Mobile */
+3. Colors
+4. Layouts
+    4.1 MAIN PAGE
+    4.2 HEADER
+        4.2.1 Fixed version (default)
+        4.2.2 Standart version (comment the 3.2.1 Fixed version to apply this style)
+    4.3 FORMULAIRE DE RECHERCHE
+    4.4 HÉBERGEMENTS
+    4.5 ACTIVITÉS
+    4.6 PIED DE PAGE
+5. Components
+    5.1 BOUTONS
+    5.2 HEADER NAVBAR EFFECT
+    5.3 CARDS
+    5.4 TOGGLE SWITCHES
+6. Device responsivity
+    6.1 Destktop smaller window
+    6.2 Tablet
+    6.3 Mobile */
 
 
 /* ==================
@@ -42,14 +43,54 @@ a
     2. TYPOGRAPHY
    ================== */
 
+:root
+{
+    --fs-large: 1.2rem;
+    --fs-medium: 0.9rem;
+    --fs-small: 0.8rem; /* Cette taille a une influence sur l'alignement du bouton "S'inscire". Sous 1rem, cela pose un problème */
+    --fs-smaller: 0.7rem;
+}
+
 body
 {
     font-family: 'Raleway', sans-serif;
 }
 
+h1, h2
+{
+    font-size: var(--fs-large);
+    font-weight: bold;
+}
+
+h3
+{
+    font-size: var(--fs-medium);
+}
+
+p,
+a,
+li
+{
+    font-size: var(--fs-small);
+}
+
 a
 {
     color: black;
+}
+
+
+
+/* ==================
+    2. COLORS
+   ================== */
+
+/* Vérifier convention Camel case vs Kebab case pour les variables */
+:root
+{
+    --mainColor: #0065fc;
+    --mainColorLight: #deebff;
+    --backgroundColor: #f2f2f2;
 }
 
 
@@ -96,6 +137,12 @@ body
 {
     margin-right: 40px;
     margin-left: 70px;
+}
+
+.header__subscribe a
+{
+    color: var(--mainColor);
+    font-weight: bold;
 }
 
 /* Place un espace entre le logo et les liens de navigation */
@@ -148,7 +195,7 @@ form
     height: 40px;
     width: 330px;
     border-radius: 10px;
-    border: 1px #f2f2f2 solid;
+    border: 1px var(--backgroundColor) solid;
 }
 
 .search-form__input
@@ -169,7 +216,7 @@ form > *
 
 .search-form__icon
 {
-    background-color: #f2f2f2;
+    background-color: var(--backgroundColor);
     border-radius: 10px 0 0 10px;
     width: 45px;
     font-size: 1.2em;
@@ -184,7 +231,8 @@ form > *
 .search-form__button
 {
     width: 100px;
-    background-color: #0065fc;
+    background-color: var(--mainColor);
+    font-weight: 500;
     color: white;
     border-radius: 0 10px 10px 0;
 }
@@ -205,7 +253,7 @@ form > *
 {
     font-size: 3.2em;
     color: white;
-    background-color: #0065fc; /* Le fond dépasse l'icône. À corriger */
+    background-color: var(--mainColor); /* Le fond dépasse l'icône. À corriger */
     border-radius: 50%;
 }
 
@@ -222,7 +270,7 @@ form > *
     flex-basis: 70%;
     padding: 30px 20px 30px 20px;
     border-radius: 25px;
-    background-color: #f2f2f2;
+    background-color: var(--backgroundColor);
 }
 
 .hebergements__gallery
@@ -238,7 +286,7 @@ form > *
     flex-basis: 30%;
     padding: 30px 20px 30px 20px;
     border-radius: 25px;
-    background-color: #f2f2f2;
+    background-color: var(--backgroundColor);
 }
 
 .fa-line-chart
@@ -274,7 +322,7 @@ form > *
     margin-top: 65px;
     display: flex;
     justify-content: space-around;
-    background-color: #f2f2f2;
+    background-color: var(--backgroundColor);
 }
 
 /* ==================
@@ -298,7 +346,7 @@ button
     position: absolute;
     top: 0;
     height: 5px;
-    background-color: #0065fc;
+    background-color: var(--mainColor);
     transform: scale(0);
     transition: 0.2s ease-in-out;
 }
@@ -313,7 +361,7 @@ button
 
 .checked-star
 {
-    color: #0065fc;
+    color: var(--mainColor);
 }
 .unchecked-star
 {
@@ -469,7 +517,7 @@ figure
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), #deebff;
+    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), var(--mainColorLight);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -489,7 +537,7 @@ figure
 /* Animation de la barre lorsque la barre est cliquée (checked) */
 input:checked + .switch-bar-economic
 {
-    background: #0065fc;
+    background: var(--mainColor);
 }
 
 /* Animation du bouton */
@@ -535,7 +583,7 @@ input:checked + .switch-bar-economic::after
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/child-solid.svg"), #deebff;
+    background: url("images/fa-icons/child-solid.svg"), var(--mainColorLight);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -555,7 +603,7 @@ input:checked + .switch-bar-economic::after
 /* Animation de la barre lorsque la barre est cliquée (checked) */
 input:checked + .switch-bar-familial
 {
-    background: #0065fc;
+    background: var(--mainColor);
 }
 
 /* Animation du bouton */
@@ -601,7 +649,7 @@ input:checked + .switch-bar-familial::after
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/heart-solid.svg"), #deebff;
+    background: url("images/fa-icons/heart-solid.svg"), var(--mainColorLight);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -621,7 +669,7 @@ input:checked + .switch-bar-familial::after
 /* Animation de la barre lorsque la barre est cliquée (checked) */
 input:checked + .switch-bar-romantic
 {
-    background: #0065fc;
+    background: var(--mainColor);
 }
 
 /* Animation du bouton */
@@ -667,7 +715,7 @@ input:checked + .switch-bar-romantic::after
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/dog-solid.svg"), #deebff;
+    background: url("images/fa-icons/dog-solid.svg"), var(--mainColorLight);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -687,7 +735,7 @@ input:checked + .switch-bar-romantic::after
 /* Animation de la barre lorsque la barre est cliquée (checked) */
 input:checked + .switch-bar-animals
 {
-    background: #0065fc;
+    background: var(--mainColor);
 }
 
 /* Animation du bouton */
@@ -785,7 +833,7 @@ input:checked + .switch-bar-animals::after
     .header__navbar
     {
         width: 100%;
-        border-bottom: #f2f2f2 5px solid;
+        border-bottom: var(--backgroundColor) 5px solid;
     }
     .header__nav-list
     {
