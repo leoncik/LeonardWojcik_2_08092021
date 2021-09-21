@@ -121,8 +121,6 @@ main
 
 /* 4.2 HEADER */
 
-/* FAIRE TRÈS ATTENTION À LA LIGNE BLEUE TOUT EN HAUT QUAND ON SÉLECTIONNE UNE CATÉGORIE ! */
-
 .header__nav-list
 {
     display: flex;
@@ -433,7 +431,14 @@ button
 
 .hebergements__card, .activites__card
 {
+    cursor: pointer;
     box-shadow: 0 3px 8px rgba(206, 206, 206, 0.438);
+    transition: 0.4s;
+}
+
+.hebergements__card:hover, .activites__card:hover
+{
+    transform: scale(1.06);
 }
 
 /* Hebergement cards */
@@ -931,6 +936,14 @@ input:checked + .switch-bar-animals::after
     }
 
     /* HEADER */
+    #hebergements
+    {
+        scroll-margin-top: 140px;
+    }
+    #activites
+    {
+        scroll-margin-top: 180px;
+    }
     .search-form
     {
         padding-top: 160px;
@@ -946,11 +959,18 @@ input:checked + .switch-bar-animals::after
         width: 100%;
         border-bottom: var(--backgroundColor) 5px solid;
     }
+
     .header__nav-list
     {
-        justify-content: space-around;
+        padding-left: 0;
+        gap: 0;
     }
 
+    .header__nav-list-item
+    {
+        width: 50%;
+        text-align: center;
+    }
 
     /* HÉBERGEMENTS */
     .hebergements
