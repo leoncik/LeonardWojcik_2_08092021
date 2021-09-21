@@ -77,10 +77,15 @@ a
     color: black;
 }
 
+.footer a:hover
+{
+    border-bottom: var(--mainColor) 1px solid;
+}
+
 
 
 /* ==================
-    2. COLORS
+    3. COLORS
    ================== */
 
 /* Vérifier convention Camel case vs Kebab case pour les variables */
@@ -94,24 +99,27 @@ a
 
 
 /* ==================
-    3. LAYOUTS
+    4. LAYOUTS
    ================== */
 
-/* 3.1 MAIN PAGE */
+/* 4.1 MAIN PAGE */
 
 body
 {
     margin: 0;
 }
 
-
-
 .search-form, main
 {
     padding: 0 40px;
 }
 
-/* 3.2 HEADER */
+main
+{
+    margin-top: 40px;
+}
+
+/* 4.2 HEADER */
 
 /* FAIRE TRÈS ATTENTION À LA LIGNE BLEUE TOUT EN HAUT QUAND ON SÉLECTIONNE UNE CATÉGORIE ! */
 
@@ -158,6 +166,7 @@ body
 header
 {
     display: flex;
+    align-items: center;
     width: 100%;
     padding-top: 40px;
     position: fixed;
@@ -172,7 +181,7 @@ header
     scroll-margin-top: 100px;
 }
 
-/* 3.3 FORMULAIRE DE RECHERCHE */
+/* 4.3 FORMULAIRE DE RECHERCHE */
 
 /* Barre de recherche */
 
@@ -236,6 +245,11 @@ form > *
 
 /* Output */
 
+.search__output
+{
+    margin-top: 30px;
+}
+
 .fa-info
 {
     display: inline-block;
@@ -249,12 +263,13 @@ form > *
     margin-right: 10px;
 }
 
-/* 3.4 HÉBERGEMENTS */
+/* 4.4 HÉBERGEMENTS */
 
 .hebergements
 {
     display: flex;
     gap: 25px;
+    margin-bottom: 50px;
 }
 
 .hebergements__main-list
@@ -296,7 +311,7 @@ form > *
     object-fit: cover;
 }
 
-/* 3.5 ACTIVITÉS */
+/* 4.5 ACTIVITÉS */
 
 .activites__gallery
 {
@@ -307,47 +322,101 @@ form > *
     column-gap: 35px;
 }
 
-/* 3.6 PIED DE PAGE */
+/* 4.6 PIED DE PAGE */
 
 .footer
 {
     margin-top: 65px;
     display: flex;
     justify-content: space-around;
+    padding-bottom: 30px;
     background-color: var(--backgroundColor);
 }
 
+/*
+.footer__help  Cet élément présente un espacement plus large d'après la maquette 
+{
+    margin-left: auto;
+}*/
+
 /* ==================
-    4. COMPONENTS
+    5. COMPONENTS
    ================== */
 
-/* 4.1 BOUTONS */
+/* 5.1 BOUTONS */
 
 button
 {
     cursor: pointer;
 }
 
-/* 4.2 HEADER NAVBAR EFFECT */
+/* 5.2 HEADER NAVBAR EFFECT */
+
+/* Desktop and tablet version */
+
+.header__nav-list-item_hover a:hover
+{
+    color: var(--mainColor);
+}
 
 .header__nav-list-item_hover::before
 {
     content: "";
     display: block; /* Permet d'attribuer une largeur */
-    width: 100%;
-    position: absolute;
-    top: 0;
+    width: 125%;
+    position: relative;
+    bottom: 59px;
+    margin-left: auto;
+    margin-right: auto;
     height: 5px;
     background-color: var(--mainColor);
     transform: scale(0);
     transition: 0.2s ease-in-out;
 }
+
 .header__nav-list-item_hover:hover::before
 {
     transform: scale(1);
 }
 
-/* 4.3 CARDS */
+/* Le style ne reste pas quand il y a un href autre que # seul... */
+.header__nav-list a:focus
+{
+    color: red;
+}
+
+/* Ici le focus fonctionne */
+.header__subscribe a:focus
+{
+    color: red;
+}
+
+/* Mobile version */
+
+@media all and (max-width: 480px)
+{
+    .header__nav-list-item_hover::before
+    {
+        content: "";
+        display: block; /* Permet d'attribuer une largeur */
+        width: auto;
+        position: relative;
+        top: 36px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 5px;
+        background-color: var(--mainColor);
+        transform: scale(0);
+        transition: 0.2s ease-in-out;
+    }
+
+    .header__nav-list-item_hover:hover::before
+    {
+        transform: scale(1);
+    }
+}
+
+/* 5.3 CARDS */
 
 /* Stars style */
 
@@ -497,7 +566,7 @@ figure
     grid-row-end: span 2;
 }
 
-/* 4.4 TOGGLE SWITCHES */
+/* 5.4 TOGGLE SWITCHES */
 /* Plusieurs propriétés se répètent, penser à les regrouper ! */
 
 /* Global propreties */
@@ -804,21 +873,10 @@ input:checked + .switch-bar-animals::after
 }
 
 /* ========================
-    5. DEVICE RESPONSIVITY
+    6. DEVICE RESPONSIVITY
    ======================== */
 
-/* 5.1 Destktop smaller window */
-
-@media all and (max-width: 700px)
-{
-    .header__navbar
-    {
-        order: 1;
-    }
-
-}
-
-/* 5.2 Tablet */
+/* 6.1 Tablet */
 
 @media all and (min-width: 480px) and (max-width: 801px)
 {
@@ -856,7 +914,7 @@ input:checked + .switch-bar-animals::after
     }
 }
 
-/* 5.3 Mobile */
+/* 6.2 Mobile */
 
 @media all and (max-width: 480px)
 {
@@ -873,6 +931,10 @@ input:checked + .switch-bar-animals::after
     }
 
     /* HEADER */
+    .search-form
+    {
+        padding-top: 160px;
+    }
     header 
     {
         flex-wrap: wrap;
@@ -880,6 +942,7 @@ input:checked + .switch-bar-animals::after
 
     .header__navbar
     {
+        order: 1; /* Fait passer les liens de navigation après le bouton "s'inscrire" */
         width: 100%;
         border-bottom: var(--backgroundColor) 5px solid;
     }
