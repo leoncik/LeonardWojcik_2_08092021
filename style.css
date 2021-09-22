@@ -77,9 +77,14 @@ a
     color: black;
 }
 
-.footer a:hover
+.footer a:hover, .hebergements__show-more:hover
 {
     border-bottom: var(--mainColor) 1px solid;
+}
+
+.bold-text
+{
+    font-weight: bold;
 }
 
 
@@ -231,6 +236,13 @@ form > *
     border-radius: 0 10px 10px 0;
 }
 
+/* Masque l'icône de recherche sur ordinateur et tablettes */
+
+.search-form__search-icon
+{
+    display: none;
+}
+
 /* Filtres */
 
 .search-form__filters
@@ -309,6 +321,12 @@ form > *
     object-fit: cover;
 }
 
+.hebergements__show-more
+{
+    font-size: var(--fs-medium);
+    font-weight: bold;
+}
+
 /* 4.5 ACTIVITÉS */
 
 .activites__gallery
@@ -375,18 +393,6 @@ button
 .header__nav-list-item_hover:hover::before
 {
     transform: scale(1);
-}
-
-/* Le style ne reste pas quand il y a un href autre que # seul... */
-.header__nav-list a:focus
-{
-    color: red;
-}
-
-/* Ici le focus fonctionne */
-.header__subscribe a:focus
-{
-    color: red;
 }
 
 /* Mobile version */
@@ -970,6 +976,25 @@ input:checked + .switch-bar-animals::after
     {
         width: 50%;
         text-align: center;
+    }
+
+    /* FORMULAIRE DE RECHERCHE */
+    .search-form__text
+    {
+        display: none;
+    }
+    
+    .search-form__search-icon
+    {
+        display: initial;
+    }
+
+    /* FILTERS */
+
+    .search-form__filters
+    {
+        gap: 13px;
+        flex-direction: column;
     }
 
     /* HÉBERGEMENTS */
