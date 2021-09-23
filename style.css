@@ -126,6 +126,11 @@ main
 
 /* 4.2 HEADER */
 
+.header__nav-list a, .header__subscribe a
+{
+    font-size: var(--fs-medium);
+}
+
 .header__nav-list
 {
     display: flex;
@@ -186,13 +191,27 @@ header
 
 /* 4.3 FORMULAIRE DE RECHERCHE */
 
+/* Slogan texte */
+
+.search-form__slogan-text h1
+{
+    margin-bottom: 0;
+}
+
+.search-form__slogan-text p
+{
+    margin-top: 7px;
+    margin-bottom: 25px;
+}
+
+
 /* Barre de recherche */
 
 form
 {
     display: flex;
-    height: 40px;
-    width: 330px;
+    height: 45px;
+    width: 350px;
     border-radius: 10px;
     border: 1px var(--backgroundColor) solid;
 }
@@ -229,11 +248,18 @@ form > *
 
 .search-form__button
 {
-    width: 100px;
+    width: 110px;
     background-color: var(--mainColor);
     font-weight: 500;
     color: white;
+    font-weight: bold;
     border-radius: 0 10px 10px 0;
+    transition: 0.2s;
+}
+
+.search-form__button:hover
+{
+    opacity: 0.85;
 }
 
 /* Masque l'icône de recherche sur ordinateur et tablettes */
@@ -250,7 +276,12 @@ form > *
     margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 25px;
+}
+
+.search-form__filters .bold-text
+{
+    font-size: var(--fs-medium);
 }
 
 /* Output */
@@ -333,7 +364,7 @@ form > *
 {
     display: grid;
     grid-template-columns: repeat(4, minmax(50px, 270px));
-    grid-template-rows: 200px 20px 30px 160px;
+    grid-template-rows: 180px 35px 30px 160px;
     grid-auto-flow: column;
     column-gap: 35px;
 }
@@ -456,10 +487,6 @@ button
     border-radius: 15px;
 }
 
-.hebergements__card_main-list
-{
-    width: 240px;
-}
 
 figure
 {
@@ -476,6 +503,26 @@ figure
 {
     padding-left: 10px;
 }
+
+/* Main list cards */
+
+.hebergements__card_main-list h3
+{
+    margin-bottom: 0;
+}
+
+.hebergements__card_main-list p
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.hebergements__card_main-list
+{
+    width: 240px;
+}
+
+/* Hebergement cards trending */
 
 .hebergements__card_trending
 {
@@ -578,7 +625,6 @@ figure
 }
 
 /* 5.4 TOGGLE SWITCHES */
-/* Plusieurs propriétés se répètent, penser à les regrouper ! */
 
 /* Global propreties */
 
@@ -910,6 +956,7 @@ input:checked + .switch-bar-animals::after
     {
         grid-row: span 1;
     }
+    
     /* Reajust span of vertical cards */
     .activites__card_vertical
     {
@@ -944,7 +991,7 @@ input:checked + .switch-bar-animals::after
     /* HEADER */
     #hebergements
     {
-        scroll-margin-top: 140px;
+        scroll-margin-top: 125px;
     }
     #activites
     {
@@ -979,6 +1026,11 @@ input:checked + .switch-bar-animals::after
     }
 
     /* FORMULAIRE DE RECHERCHE */
+    form
+    {
+        width: 300px;
+    }
+
     .search-form__text
     {
         display: none;
@@ -987,6 +1039,12 @@ input:checked + .switch-bar-animals::after
     .search-form__search-icon
     {
         display: initial;
+    }
+
+    .search-form__button
+    {
+        border-radius: 10px;
+        width: 50px;
     }
 
     /* FILTERS */
@@ -1032,7 +1090,7 @@ input:checked + .switch-bar-animals::after
 
     .activites__img
     {
-        height: 235px;
+        height: 190px;
     }
 
     /* FOOTER */
@@ -1042,6 +1100,3 @@ input:checked + .switch-bar-animals::after
         padding-left: 25px;
     }
 }
-
-/* property: initial; permet de reset les propriétés précédentes... super ! */
-/* ajouter un breakpoint à 595px pour le header */
