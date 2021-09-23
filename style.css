@@ -16,9 +16,8 @@
     5.3 CARDS
     5.4 TOGGLE SWITCHES
 6. Device responsivity
-    6.1 Destktop smaller window
-    6.2 Tablet
-    6.3 Mobile */
+    6.1 Tablet
+    6.2 Mobile */
 
 
 /* ==================
@@ -36,6 +35,22 @@ a
     text-decoration: none;
 }
 
+/* Style général des border-radius mutualisés */
+:root
+{
+    --common-radius: 15px;
+}
+
+.hebergements__main-list,
+.hebergements__trending,
+.hebergements__card,
+.hebergements__card_trending,
+.activites__card,
+.activites__img
+{
+    border-radius: var(--common-radius);
+}
+
 
 /* ==================
     2. TYPOGRAPHY
@@ -45,7 +60,7 @@ a
 {
     --fs-large: 1.2rem;
     --fs-medium: 0.9rem;
-    --fs-small: 0.8rem; /* Cette taille a une influence sur l'alignement du bouton "S'inscire". Sous 1rem, cela pose un problème */
+    --fs-small: 0.8rem;
     --fs-smaller: 0.7rem;
 }
 
@@ -79,7 +94,7 @@ a
 
 .footer a:hover, .hebergements__show-more:hover
 {
-    border-bottom: var(--mainColor) 1px solid;
+    border-bottom: var(--main-color) 1px solid;
 }
 
 .bold-text
@@ -88,18 +103,16 @@ a
 }
 
 
-
 /* ==================
     3. COLORS
    ================== */
 
-/* Vérifier convention Camel case vs Kebab case pour les variables */
 :root
 {
-    --mainColor: #0065fc;
-    --mainColorLight: #deebff;
-    --hoverButtonColor: #a2e5ee;
-    --backgroundColor: #f2f2f2;
+    --main-color: #0065fc;
+    --main-color-light: #deebff;
+    --hover-button-color: #a2e5ee;
+    --background-color: #f2f2f2;
 }
 
 
@@ -156,7 +169,7 @@ main
 
 .header__subscribe a
 {
-    color: var(--mainColor);
+    color: var(--main-color);
     font-weight: bold;
 }
 
@@ -213,7 +226,7 @@ form
     height: 45px;
     width: 350px;
     border-radius: 10px;
-    border: 1px var(--backgroundColor) solid;
+    border: 1px var(--background-color) solid;
 }
 
 .search-form__input
@@ -234,7 +247,7 @@ form > *
 
 .search-form__icon
 {
-    background-color: var(--backgroundColor);
+    background-color: var(--background-color);
     border-radius: 10px 0 0 10px;
     width: 45px;
     font-size: 1.2em;
@@ -250,7 +263,7 @@ form > *
 .search-form__button
 {
     width: 110px;
-    background-color: var(--mainColor);
+    background-color: var(--main-color);
     font-weight: 500;
     color: white;
     font-weight: bold;
@@ -299,7 +312,7 @@ form > *
     width: 14px;
     height: 14px;
     padding: 5px 4px 4px 4px;
-    color: var(--mainColor);
+    color: var(--main-color);
     text-align: center;
     box-shadow: 0px 0px 2px #2b2b2b;
     margin-right: 10px;
@@ -318,8 +331,7 @@ form > *
 {
     flex-basis: 70%;
     padding: 30px 20px 30px 20px;
-    border-radius: 15px;
-    background-color: var(--backgroundColor);
+    background-color: var(--background-color);
 }
 
 .hebergements__gallery
@@ -334,8 +346,7 @@ form > *
     position: relative; /* Pour fixer en absolute l'icône "fa-line-chart" */
     flex-basis: 30%;
     padding: 30px 20px 30px 20px;
-    border-radius: 15px;
-    background-color: var(--backgroundColor);
+    background-color: var(--background-color);
 }
 
 .fa-line-chart
@@ -378,14 +389,8 @@ form > *
     display: flex;
     justify-content: space-around;
     padding-bottom: 30px;
-    background-color: var(--backgroundColor);
+    background-color: var(--background-color);
 }
-
-/*
-.footer__help  Cet élément présente un espacement plus large d'après la maquette 
-{
-    margin-left: auto;
-}*/
 
 /* ==================
     5. COMPONENTS
@@ -404,7 +409,7 @@ button
 
 .header__nav-list-item_hover a:hover
 {
-    color: var(--mainColor);
+    color: var(--main-color);
 }
 
 .header__nav-list-item_hover::before
@@ -417,7 +422,7 @@ button
     margin-left: auto;
     margin-right: auto;
     height: 5px;
-    background-color: var(--mainColor);
+    background-color: var(--main-color);
     transform: scale(0);
     transition: 0.2s ease-in-out;
 }
@@ -434,14 +439,14 @@ button
     .header__nav-list-item_hover::before
     {
         content: "";
-        display: block; /* Permet d'attribuer une largeur */
+        display: block;
         width: auto;
         position: relative;
         top: 36px;
         margin-left: auto;
         margin-right: auto;
         height: 5px;
-        background-color: var(--mainColor);
+        background-color: var(--main-color);
         transform: scale(0);
         transition: 0.2s ease-in-out;
     }
@@ -458,7 +463,7 @@ button
 
 .checked-star
 {
-    color: var(--mainColor);
+    color: var(--main-color);
 }
 .unchecked-star
 {
@@ -485,7 +490,6 @@ button
 {
     margin: 10px 0;
     background-color: white;
-    border-radius: 15px;
 }
 
 
@@ -497,7 +501,7 @@ figure
 .hebergements__img
 {
     width: 100%;
-    border-radius: 15px 15px 0 0;
+    border-radius: var(--common-radius) var(--common-radius) 0 0;
 }
 
 .hebergements__card figcaption
@@ -540,7 +544,7 @@ figure
 {
     width: 110px;
     height: 130px;
-    border-radius: 15px 0 0 15px;
+    border-radius: var(--common-radius) 0 0 var(--common-radius);
 }
 
 .hebergements__card_trending figcaption
@@ -558,7 +562,6 @@ figure
 
 .activites__card
 {
-    border-radius: 15px;
     justify-self: stretch;
     align-self: stretch;
 }
@@ -570,15 +573,14 @@ figure
 
 .activites__img
 {
-    border-radius: 15px 15px 15px 15px;
     object-fit: cover;
     width: 100%;
     height: 100px;
 }
 
-.activites__card figure /* J'ai passé du temps à vouloir modifier la hauteur de l'image alors que c'était la figure qui était en tort ! */
+.activites__card figure
 {
-    position: relative; /* Pour pouvoir positionner le texte en bas avec un position: basolute */
+    position: relative; /* Pour pouvoir positionner le texte en bas avec un position: absolute */
     height: 100%;
 }
 
@@ -593,7 +595,7 @@ figure
     bottom: 0;
     width: 100%;
     padding-left: 0px;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 var(--common-radius) var(--common-radius);
     background-color: white;
 }
 
@@ -664,7 +666,7 @@ figure
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), var(--mainColorLight);
+    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), var(--main-color-light);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -673,7 +675,7 @@ figure
 
 .switch-bar-economic:hover::before
 {
-    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), var(--hoverButtonColor);
+    background: url("images/fa-icons/money-bill-wave-alt-solid.svg"), var(--hover-button-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -689,10 +691,10 @@ figure
     font-weight: bold;
 }
 
-/* Animation de la barre lorsque la barre est cliquée (checked) */
+/* Animation de la barre lorsqu'elle est cliquée (checked) */
 input:checked + .switch-bar-economic
 {
-    background: var(--mainColor);
+    background: var(--main-color);
 }
 
 /* Animation du bouton */
@@ -738,7 +740,7 @@ input:checked + .switch-bar-economic::after
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/child-solid.svg"), var(--mainColorLight);
+    background: url("images/fa-icons/child-solid.svg"), var(--main-color-light);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -747,7 +749,7 @@ input:checked + .switch-bar-economic::after
 
 .switch-bar-familial:hover::before
 {
-    background: url("images/fa-icons/child-solid.svg"), var(--hoverButtonColor);
+    background: url("images/fa-icons/child-solid.svg"), var(--hover-button-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -763,10 +765,10 @@ input:checked + .switch-bar-economic::after
     font-weight: bold;
 }
 
-/* Animation de la barre lorsque la barre est cliquée (checked) */
+/* Animation de la barre lorsqu'elle est cliquée (checked) */
 input:checked + .switch-bar-familial
 {
-    background: var(--mainColor);
+    background: var(--main-color);
 }
 
 /* Animation du bouton */
@@ -812,7 +814,7 @@ input:checked + .switch-bar-familial::after
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/heart-solid.svg"), var(--mainColorLight);
+    background: url("images/fa-icons/heart-solid.svg"), var(--main-color-light);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -821,7 +823,7 @@ input:checked + .switch-bar-familial::after
 
 .switch-bar-romantic:hover::before 
 {
-    background: url("images/fa-icons/heart-solid.svg"), var(--hoverButtonColor);
+    background: url("images/fa-icons/heart-solid.svg"), var(--hover-button-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -837,10 +839,10 @@ input:checked + .switch-bar-familial::after
     font-weight: bold;
 }
 
-/* Animation de la barre lorsque la barre est cliquée (checked) */
+/* Animation de la barre lorsqu'elle est cliquée (checked) */
 input:checked + .switch-bar-romantic
 {
-    background: var(--mainColor);
+    background: var(--main-color);
 }
 
 /* Animation du bouton */
@@ -886,7 +888,7 @@ input:checked + .switch-bar-romantic::after
     bottom: -2px;
     left: -2px;
     border-radius: 50%;
-    background: url("images/fa-icons/dog-solid.svg"), var(--mainColorLight);
+    background: url("images/fa-icons/dog-solid.svg"), var(--main-color-light);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -895,7 +897,7 @@ input:checked + .switch-bar-romantic::after
 
 .switch-bar-animals:hover::before 
 {
-    background: url("images/fa-icons/dog-solid.svg"), var(--hoverButtonColor);
+    background: url("images/fa-icons/dog-solid.svg"), var(--hover-button-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
@@ -911,10 +913,10 @@ input:checked + .switch-bar-romantic::after
     font-weight: bold;
 }
 
-/* Animation de la barre lorsque la barre est cliquée (checked) */
+/* Animation de la barre lorsqu'elle est cliquée (checked) */
 input:checked + .switch-bar-animals
 {
-    background: var(--mainColor);
+    background: var(--main-color);
 }
 
 /* Animation du bouton */
@@ -1009,9 +1011,9 @@ input:checked + .switch-bar-animals::after
 
     .header__navbar
     {
-        order: 1; /* Fait passer les liens de navigation après le bouton "s'inscrire" */
+        order: 1; /* Fait passer les liens de navigation après (changement d'ordre) le bouton "s'inscrire" */
         width: 100%;
-        border-bottom: var(--backgroundColor) 5px solid;
+        border-bottom: var(--background-color) 5px solid;
     }
 
     .header__nav-list
