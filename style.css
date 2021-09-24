@@ -1111,3 +1111,41 @@ input:checked + .switch-bar-animals::after
         padding-left: 25px;
     }
 }
+
+/* 6.2 Very small screens */
+@media all and (max-width: 344px)
+{
+    /* MAIN PAGE */
+    html, body
+    {
+    overflow: auto;
+    }
+
+    /* HEADER */
+    .header__subscribe
+    {
+        margin-left: 0;
+        margin-right: 35px;
+    }
+
+    /* FORMULAIRE DE RECHERCHE */
+    form
+    {
+        width: 200px;
+    }
+
+    .search-form__icon
+    {
+        width: 25px;
+    }
+
+    .search-form__input
+    {
+        width: 120px;
+    }
+
+    .search-form__button
+    {
+        width: 35px;
+    }
+}
