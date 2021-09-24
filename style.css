@@ -16,8 +16,11 @@
     5.3 CARDS
     5.4 TOGGLE SWITCHES
 6. Device responsivity
-    6.1 Tablet
-    6.2 Mobile */
+    6.1 Extra large screens
+    6.2 Tablet
+    6.3 Smaller tablets
+    6.4 Mobile
+    6.5 Very small screens */
 
 
 /* ==================
@@ -944,7 +947,7 @@ input:checked + .switch-bar-animals::after
 
 }
 
-/* 6.1 Tablet */
+/* 6.2 Tablet */
 
 @media all and (min-width: 480px) and (max-width: 801px)
 {
@@ -983,7 +986,22 @@ input:checked + .switch-bar-animals::after
     }
 }
 
-/* 6.2 Mobile */
+/* 6.3 Smaller tablets */
+@media all and (max-width: 569px)
+{
+    .header__nav-list
+    {
+        gap: 40px;
+    }
+
+    .header__subscribe
+    {
+        margin-left: 40px;
+    }
+
+}
+
+/* 6.4 Mobile */
 
 @media all and (max-width: 480px)
 {
@@ -1112,7 +1130,7 @@ input:checked + .switch-bar-animals::after
     }
 }
 
-/* 6.2 Very small screens */
+/* 6.5 Very small screens */
 @media all and (max-width: 344px)
 {
     /* MAIN PAGE */
