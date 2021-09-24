@@ -27,16 +27,16 @@
     <body>
         <header class="header">
             <div class="header__logo">
-                <!-- Réalisé avec la police "Rancho Font", possibilité de l'intégrer à la place du svg ? -->
+                <!-- Réalisé avec la police "Rancho Font" -->
                 <a href="#search-form"><img src="images/logo/Reservia.svg" alt="Logo Reservia"></a>
             </div>
             <div class="header__push"></div>
-            <div class="header__navbar">
+            <nav class="header__navbar">
                 <ul class="header__nav-list">
                     <li class="header__nav-list-item header__nav-list-item_hover"><a href="#hebergements">Hébergement</a></li>
                     <li class="header__nav-list-item header__nav-list-item_hover"><a href="#activites">Activités</a></li>
                 </ul>
-            </div>
+            </nav>
             <div class="header__subscribe">
                 <p><a href="#">S'inscrire</a></p>
             </div>
@@ -50,7 +50,7 @@
                 <p>En plein centre ville ou en pleine nature</p>
             </div>
             <div class="search-form__content">
-                <form action="page.php">
+                <form>
                     <button type="button" onclick="alert('Affichage carte')" class="search-form__icon"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
                     <input type="text" placeholder="Marseille, France" class="search-form__input">
                     <button type="submit" class="search-form__button"><span class="search-form__text">Rechercher</span> <span class="search-form__search-icon"><i class="fa fa-search" aria-hidden="true"></i>
